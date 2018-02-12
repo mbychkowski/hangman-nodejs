@@ -14,9 +14,7 @@ Letter.prototype.displayLetter = function() {
 Letter.prototype.updateGuess = function(characterGuess) {
   if (characterGuess === this.character) {
     this.isGuessed = true;
-  } else {
-    this.isGuessed = false;
-  }
+  } 
 }
 
 module.exports = Letter;
