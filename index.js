@@ -1,12 +1,13 @@
-var Letter = require('./Letter.js');
+var Word = require('./Word.js');
+
+var randomWord = 'mississippi';
+var word = new Word(randomWord)
 
 var args = process.argv;
-var userGuess = args[2];
 
+var userGuess = args[2];
 console.log('Your guess is:', userGuess);
 
-var letter = new Letter('z');
+word.guessWord(userGuess);
 
-letter.updateGuess(userGuess);
-
-console.log(letter.displayLetter());
+word.displayWord();

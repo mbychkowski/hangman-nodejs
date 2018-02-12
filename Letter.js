@@ -11,8 +11,8 @@ Letter.prototype.displayLetter = function() {
   }
 }
 
-Letter.prototype.updateGuess = function(userGuess) {
-  if (userGuess === this.character) {
+Letter.prototype.updateGuess = function(characterGuess) {
+  if (characterGuess === this.character) {
     this.isGuessed = true;
   } else {
     this.isGuessed = false;
