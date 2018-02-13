@@ -15,7 +15,7 @@ Word.prototype.displayWord = function() {
   this.letterArr.forEach(function(letterObject) {
     displayWord += letterObject.displayLetter() + ' ';
   });
-  console.log(displayWord);
+  console.log('\n' + displayWord + '\n');
 }
 
 Word.prototype.guessWord = function(characterGuess) {
