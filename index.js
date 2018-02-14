@@ -24,8 +24,7 @@ var playGame = function() {
 
   if (isPlay) {
 
-    inquirer.prompt([
-      {
+    inquirer.prompt([{
         type: 'input',
         name: 'userGuess',
         message: 'Guess a letter: ',
