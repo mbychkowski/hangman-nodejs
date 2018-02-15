@@ -12,7 +12,7 @@ var randomWord = gameWords[randIndex];
 var word = new Word(randomWord);
 var letterArr = word.letterArr;
 
-console.log('\nGuess the following academy award winning movie title:')
+console.log('\nGuess the following academy award winning movie title (1991 - 2017): ')
 word.displayWord();
 
 // Initialize variables for playGame() function.
@@ -20,7 +20,7 @@ var attempts = 0;
 var guessArr = [];
 var isPlay = true;
 
-var playGame = function() {
+playGame = function() {
 
   if (isPlay) {
 
@@ -51,7 +51,7 @@ var playGame = function() {
 
       var seeGuess = answer.seeGuess;
       if (seeGuess) {
-        showGuess(guessArr)
+        showGuess(guessArr);
       }
 
       word.guessWord(userGuess);
@@ -59,7 +59,7 @@ var playGame = function() {
       word.displayWord();
 
       // Find index of the letter in the word object. Returns -1 if doesn't
-      // exist in word. Add to attempts.
+      // exist in word. Add to attempts if -1.
       var index = letterArr.map(function(obj) {
         return obj.character
       }).indexOf(userGuess);
@@ -90,21 +90,22 @@ var playGame = function() {
 
 playGame();
 
-function gameOver() {
-  console.log('\n-----------------');
-  console.log('-----GameOver-----');
-  console.log('-----------------\n');
-}
-
 function attemptsLeft() {
   var remainingAttempts = 8 - attempts;
   console.log('You have ' + remainingAttempts + ' remaining.');
 }
 
-function winner() {
-  console.log('\n!!!!!!!!!!!!!!!!!!');
-  console.log('!!!!!!WINNER!!!!!!');
-  console.log('!!!!!!!!!!!!!!!!!\n');
+function gameOver() {
+  console.log('\n-----------------');
+  console.log('----Game Over----');
+  console.log('-----------------\n');
+  console.log('The movie was: ');
+  console.log('\n-----------------');
+  console.log(randomWord);
+  console.log('-----------------\n');
+
+
+
 }
 
 function isWinner() {
@@ -121,6 +122,12 @@ function isWinner() {
   } else {
     return false;
   }
+}
+
+function winner() {
+  console.log('\n!!!!!!!!!!!!!!!!!!');
+  console.log('!!!!!!WINNER!!!!!!');
+  console.log('!!!!!!!!!!!!!!!!!\n');
 }
 
 function showGuess(guessArr) {

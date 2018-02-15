@@ -1,7 +1,3 @@
-var omdbSearch = require('./Movie').omdbSearch;
-
-var gameWordObjs = [];
-
 var gameWords = [
   'moonlight',
   'spotlight',
@@ -29,10 +25,5 @@ var gameWords = [
   'the silence of the lambs',
   'dances with wolves'
 ];
-
-for (var i = 0; i < gameWords.length; i++) {
-  var movie = omdbSearch(gameWords[i]);
-  gameWordObjs.push(movie);
-}
 
 module.exports = gameWords;
